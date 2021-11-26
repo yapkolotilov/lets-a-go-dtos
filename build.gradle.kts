@@ -20,7 +20,6 @@ dependencies {
     implementation("io.swagger", "swagger-annotations", "1.6.3")
     implementation("com.fasterxml.jackson.core", "jackson-annotations", "2.2.1")
     implementation("javax.validation", "validation-api", "2.0.1.Final")
-    implementation("org.springframework.boot", "spring-boot-starter-validation")
 }
 
 tasks.withType<KotlinCompile>() {
@@ -34,7 +33,7 @@ publishing {
             url = uri("https://maven.pkg.github.com/yapkolotilov/lets-a-go-dtos")
             credentials {
                 username = System.getenv("GITHUB_USERNAME").orEmpty()
-                password = System.getenv("GITHUB_TOKEN").orEmpty()
+                password = System.getenv("GITHUB_PASSWORD").orEmpty()
             }
         }
     }
